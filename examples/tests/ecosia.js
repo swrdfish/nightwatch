@@ -2,18 +2,17 @@ describe('Ecosia.org Demo', function() {
 
   before(browser => {
     browser
-      .navigateTo('https://www.ecosia.org/');
+      // .navigateTo('https://bstackdemo.com/')
+      .navigateTo('http://localhost:8000/z.html');
   });
 
-  it('Demo test ecosia.org', function(browser) {
-    browser
-      .waitForElementVisible('body')
-      .assert.titleContains('Ecosia')
-      .assert.visible('input[type=search]')
-      .setValue('input[type=search]', 'nightwatch')
-      .assert.visible('button[type=submit]')
-      .click('button[type=submit]')
-      .assert.textContains('.layout__content', 'Nightwatch.js');
+  it('Demo test ecosia.org', async function() {
+    const element = await browser.findElements('input');
+    const res = await element.filterVisibleElements().getElementByIndex(1)
+    
+    // .getElementByIndex(1).findChildElement('li')
+
+    console.log(res)
   });
 
   after(browser => browser.end());
