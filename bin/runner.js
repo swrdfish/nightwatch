@@ -8,7 +8,11 @@ try {
   Nightwatch.cli(function (argv) {
     argv._source = argv['_'].slice(0);
 
+    __writeLog('load_cli_runner', 'start');
+
     const runner = Nightwatch.CliRunner(argv);
+
+    __writeLog('load_cli_runner', 'end');
 
     return runner
       .setupAsync()

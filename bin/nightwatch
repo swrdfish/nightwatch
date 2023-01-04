@@ -1,16 +1,37 @@
 #!/usr/bin/env node
 
+const fs = require('fs');
+let csvFileName = 'perf.csv';
+let startTime;
+
+fs.truncateSync(csvFileName); // empty file
+fs.writeFileSync(csvFileName, 'threadId, phase, start_or_end, time_from_start\n'); // write header
+
+function __writeLog(phase, start_or_end = 'nil') {
+  let currentTime = new Date().getTime();
+  let diffTime = currentTime - startTime;
+  let pid = process.pid;
+
+  fs.appendFileSync(csvFileName, `${pid}, ${phase}, ${start_or_end}, ${diffTime}\n`);
+}
+
+global.__writeLog = __writeLog;
+
 const semver = require('semver');
 const {Logger} = require('../lib/utils');
 const requiredVersion = require('../package.json').engines.node;
 
+startTime= new Date().getTime();
+__writeLog('cli_invoked');
 function checkNodeVersion (wanted, id) {
+  __writeLog('check_node_version', 'start');
   if (!semver.satisfies(process.version, wanted)) {
     Logger.error('You are using Node ' + process.version + ', but this version of ' + id +
       ' requires Node ' + wanted + '.\nPlease upgrade your Node version.'
     );
     process.exit(1);
   }
+  __writeLog('check_node_version', 'end');
 }
 
 checkNodeVersion(requiredVersion, 'nightwatch');
