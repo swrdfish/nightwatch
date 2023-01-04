@@ -22,7 +22,7 @@ const {Logger} = require('../lib/utils');
 const requiredVersion = require('../package.json').engines.node;
 
 startTime= new Date().getTime();
-__writeLog('cli_invoked');
+__writeLog('cli_invoke', 'start');
 function checkNodeVersion (wanted, id) {
   __writeLog('check_node_version', 'start');
   if (!semver.satisfies(process.version, wanted)) {

@@ -24,11 +24,16 @@ try {
         throw err;
       })
       .then(() => runner.runTests())
+      .then(result => {
+        __writeLog('cli_invoke', 'end');
+        return result;
+      })
       .catch((err) => {
         if (!err.displayed || (alwaysDisplayError(err) && !err.displayed)) {
           Logger.error(err);
         }
 
+        __writeLog('process_exit_with_error_10');
         runner.processListener.setExitCode(10).exit();
       });
   });
@@ -39,6 +44,6 @@ try {
   err.detailedErr = message;
 
   Logger.error(err);
-
+  __writeLog('process_exit_with_error_2');
   process.exit(2);
 }
