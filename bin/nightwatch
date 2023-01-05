@@ -4,8 +4,10 @@ const fs = require('fs');
 let csvFileName = 'perf.csv';
 let startTime;
 
-fs.truncateSync(csvFileName); // empty file
-fs.writeFileSync(csvFileName, 'threadId, phase, start_or_end, time_from_start\n'); // write header
+if (!process.env.__NIGHTWATCH_PARALLEL_MODE) {
+  fs.truncateSync(csvFileName); // empty file
+  fs.writeFileSync(csvFileName, 'threadId, phase, start_or_end, time_from_start\n'); // write header
+}
 
 function __writeLog(phase, start_or_end = 'nil') {
   let currentTime = new Date().getTime();
