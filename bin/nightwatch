@@ -6,7 +6,7 @@ let startTime;
 
 if (!process.env.__NIGHTWATCH_PARALLEL_MODE) {
   fs.truncateSync(csvFileName); // empty file
-  fs.writeFileSync(csvFileName, 'threadId, phase, start_or_end, time_from_start\n'); // write header
+  fs.writeFileSync(csvFileName, 'threadId | phase | start_or_end | time_from_start\n'); // write header
 }
 
 function __writeLog(phase, start_or_end = 'nil') {
@@ -14,7 +14,7 @@ function __writeLog(phase, start_or_end = 'nil') {
   let diffTime = currentTime - startTime;
   let pid = process.pid;
 
-  fs.appendFileSync(csvFileName, `${pid}, ${phase}, ${start_or_end}, ${diffTime}\n`);
+  fs.appendFileSync(csvFileName, `${pid} | ${phase} | ${start_or_end} | ${diffTime}\n`);
 }
 
 global.__writeLog = __writeLog;
