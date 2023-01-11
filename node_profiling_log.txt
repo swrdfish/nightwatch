@@ -1,0 +1,646 @@
+Statistical profiling result from isolate-0x148008000-39317-v8.log, (938 ticks, 4 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+     20    2.1%          /usr/lib/system/libsystem_c.dylib
+     15    1.6%          /usr/lib/system/libsystem_kernel.dylib
+      9    1.0%          /usr/lib/system/libsystem_pthread.dylib
+      9    1.0%          /usr/lib/libc++.1.dylib
+      6    0.6%          /usr/lib/system/libsystem_malloc.dylib
+      2    0.2%          /usr/lib/system/libsystem_platform.dylib
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      7    0.7%    0.8%  LazyCompile: *resolve node:path:1091:10
+      1    0.1%    0.1%  LazyCompile: *realpathSync node:fs:2410:22
+      1    0.1%    0.1%  LazyCompile: *readPackageScope node:internal/modules/cjs/loader:321:26
+      1    0.1%    0.1%  LazyCompile: *normalizeString node:path:66:25
+      1    0.1%    0.1%  LazyCompile: *Module.require node:internal/modules/cjs/loader:991:36
+      1    0.1%    0.1%  LazyCompile: *Module._resolveLookupPaths node:internal/modules/cjs/loader:667:38
+      1    0.1%    0.1%  Function: ^stringToFlags node:internal/fs/utils:555:23
+      1    0.1%    0.1%  Function: ^stat node:internal/modules/cjs/loader:151:14
+      1    0.1%    0.1%  Function: ^lstatSync node:fs:1508:19
+      1    0.1%    0.1%  Function: ^formatRaw node:internal/util/inspect:818:19
+      1    0.1%    0.1%  Function: ^forEachMimeType /Users/binayakghosh/projects/nightwatch/node_modules/mime-types/index.js:158:52
+
+ [C++]:
+   ticks  total  nonlib   name
+    324   34.5%   36.9%  T node::contextify::ContextifyContext::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+    310   33.0%   35.3%  T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+    141   15.0%   16.1%  T _posix_spawn_file_actions_adddup2
+     33    3.5%    3.8%  T _semaphore_destroy
+     14    1.5%    1.6%  T _mach_get_times
+      4    0.4%    0.5%  T _mach_msg_server_once
+      3    0.3%    0.3%  t void node::Buffer::(anonymous namespace)::StringSlice<(node::encoding)1>(v8::FunctionCallbackInfo<v8::Value> const&)
+      3    0.3%    0.3%  t std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long)
+      3    0.3%    0.3%  t ___pfz_setup
+      3    0.3%    0.3%  T _kdebug_trace_string
+      3    0.3%    0.3%  T _host_request_notification
+      3    0.3%    0.3%  T __simple_getenv
+      2    0.2%    0.2%  T _OSAtomicDecrement32
+      1    0.1%    0.1%  t void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)
+      1    0.1%    0.1%  t std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> > std::__1::__pad_and_output<char, std::__1::char_traits<char> >(std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> >, char const*, char const*, char const*, std::__1::ios_base&, char)
+      1    0.1%    0.1%  t node::Buffer::(anonymous namespace)::ByteLengthUtf8(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  t __os_once_gate_broadcast
+      1    0.1%    0.1%  T node::loader::ModuleWrap::SetSyntheticExport(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  T node::loader::ModuleWrap::Evaluate(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  T node::errors::TryCatchScope::~TryCatchScope()
+      1    0.1%    0.1%  T node::binding::GetInternalBinding(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  T _thread_destruct_special_reply_port
+      1    0.1%    0.1%  T _os_unfair_recursive_lock_unlock
+
+ [Summary]:
+   ticks  total  nonlib   name
+     17    1.8%    1.9%  JavaScript
+    856   91.3%   97.6%  C++
+     29    3.1%    3.3%  GC
+     61    6.5%          Shared libraries
+      4    0.4%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+    324   46.4%   34.5%  T node::contextify::ContextifyContext::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+    314   45.0%   33.5%  T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+     29    4.2%    3.1%  T _semaphore_destroy
+      9    1.3%    1.0%  T _mach_get_times
+      4    0.6%    0.4%  T _mach_msg_server_once
+      3    0.4%    0.3%  t void node::Buffer::(anonymous namespace)::StringSlice<(node::encoding)1>(v8::FunctionCallbackInfo<v8::Value> const&)
+      3    0.4%    0.3%  t std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long)
+      3    0.4%    0.3%  T __simple_getenv
+      2    0.3%    0.2%  T _OSAtomicDecrement32
+      1    0.1%    0.1%  t void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)
+      1    0.1%    0.1%  t std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> > std::__1::__pad_and_output<char, std::__1::char_traits<char> >(std::__1::ostreambuf_iterator<char, std::__1::char_traits<char> >, char const*, char const*, char const*, std::__1::ios_base&, char)
+      1    0.1%    0.1%  t node::Buffer::(anonymous namespace)::ByteLengthUtf8(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  T node::loader::ModuleWrap::SetSyntheticExport(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  T node::loader::ModuleWrap::Evaluate(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  T node::binding::GetInternalBinding(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  T _os_unfair_recursive_lock_unlock
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+    324   34.5%  T node::contextify::ContextifyContext::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+    322   99.4%    Function: ^compileFunction node:vm:308:25
+    321   99.7%      Function: ^wrapSafe node:internal/modules/cjs/loader:1011:18
+    320   99.7%        Function: ^Module._compile node:internal/modules/cjs/loader:1051:37
+    318   99.4%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1106:37
+    280   88.1%            Function: ^Module.load node:internal/modules/cjs/loader:963:33
+     38   11.9%            LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+
+    310   33.0%  T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+     49   15.8%    Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     41   83.7%      Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+     11   26.8%        Function: ~<anonymous> node:repl:1:1
+     11  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     11  100.0%            Function: ^compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      4    9.8%        Function: ~<anonymous> node:crypto:1:1
+      4  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      4  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      2    4.9%        Function: ~<anonymous> node:tls:1:1
+      2  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      2    4.9%        Function: ~<anonymous> node:http:1:1
+      2  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2  100.0%            Function: ^compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      2    4.9%        Function: ~<anonymous> node:_tls_wrap:1:1
+      2  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      2    4.9%        Function: ~<anonymous> node:_http_agent:1:1
+      2  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    2.4%        LazyCompile: ~lazyWebCrypto node:crypto:127:23
+      1  100.0%          LazyCompile: ~get node:crypto:292:8
+      1  100.0%            T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1    2.4%        LazyCompile: ~createWritableStdioStream node:internal/bootstrap/switches/is_main_thread:41:35
+      1  100.0%          LazyCompile: ~getStdout node:internal/bootstrap/switches/is_main_thread:125:19
+      1  100.0%            T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1    2.4%        LazyCompile: ~binding node:internal/bootstrap/loaders:126:37
+      1  100.0%          Function: ~<anonymous> /Users/binayakghosh/projects/nightwatch/node_modules/loupe/loupe.js:5:19
+      1  100.0%            Function: ~<anonymous> /Users/binayakghosh/projects/nightwatch/node_modules/loupe/loupe.js:1:11
+      1    2.4%        Function: ~<anonymous> node:net:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    2.4%        Function: ~<anonymous> node:internal/worker:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    2.4%        Function: ~<anonymous> node:internal/readline/emitKeypressEvents:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    2.4%        Function: ~<anonymous> node:internal/readline/callbacks:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    2.4%        Function: ~<anonymous> node:internal/crypto/hkdf:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    2.4%        Function: ~<anonymous> node:internal/child_process:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    2.4%        Function: ~<anonymous> node:https:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            Function: ^compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      1    2.4%        Function: ~<anonymous> node:dns:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            Function: ^compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      1    2.4%        Function: ~<anonymous> node:dgram:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    2.4%        Function: ~<anonymous> node:cluster:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    2.4%        Function: ~<anonymous> node:child_process:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            Function: ^compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      1    2.4%        Function: ~<anonymous> node:_tls_common:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    2.4%        Function: ~<anonymous> node:_http_server:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    2.4%        Function: ~<anonymous> node:_http_common:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    2.4%        Function: ~<anonymous> node:_http_client:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      6   12.2%      Function: ^compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      6  100.0%        Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+      6  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      6  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:991:36
+      2    4.1%      LazyCompile: ~compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      2  100.0%        Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+      2  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      2  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:991:36
+     28    9.0%    T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      4   14.3%      T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      2   50.0%        Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      2  100.0%          Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      1   50.0%            Function: ^trySelf node:internal/modules/cjs/loader:441:17
+      1   50.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1106:37
+      1   25.0%        LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%          Function: ^Module.require node:internal/modules/cjs/loader:991:36
+      1  100.0%            Function: ^require node:internal/modules/cjs/helpers:101:31
+      1   25.0%        Function: ^stat node:internal/modules/cjs/loader:151:14
+      1  100.0%          Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      3   10.7%      Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      3  100.0%        Function: ^Module.require node:internal/modules/cjs/loader:991:36
+      3  100.0%          Function: ^require node:internal/modules/cjs/helpers:101:31
+      1   33.3%            Function: ~<anonymous> /Users/binayakghosh/projects/nightwatch/node_modules/selenium-webdriver/lib/webdriver.js:1:1
+      1   33.3%            Function: ~<anonymous> /Users/binayakghosh/projects/nightwatch/node_modules/jsdom/lib/jsdom/living/generated/HTMLTimeElement.js:1:1
+      1   33.3%            Function: ^module.exports /Users/binayakghosh/projects/nightwatch/lib/utils/requireModule.js:1:27
+      2    7.1%      LazyCompile: *readPackageScope node:internal/modules/cjs/loader:321:26
+      1   50.0%        Function: ^trySelf node:internal/modules/cjs/loader:441:17
+      1  100.0%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1   50.0%        Function: ^Module._extensions..js node:internal/modules/cjs/loader:1106:37
+      1  100.0%          LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:991:36
+      1    3.6%      LazyCompile: ~start /Users/binayakghosh/projects/nightwatch/node_modules/selenium-webdriver/remote/index.js:194:8
+      1  100.0%        LazyCompile: ~createSession /Users/binayakghosh/projects/nightwatch/node_modules/selenium-webdriver/chromium.js:662:23
+      1  100.0%          LazyCompile: ~createSession /Users/binayakghosh/projects/nightwatch/node_modules/selenium-webdriver/chrome.js:252:23
+      1  100.0%            LazyCompile: ~createDriver /Users/binayakghosh/projects/nightwatch/node_modules/selenium-webdriver/index.js:119:22
+      1    3.6%      LazyCompile: ~queuedCommandFn /Users/binayakghosh/projects/nightwatch/lib/api/_loaders/_base-loader.js:283:36
+      1  100.0%        LazyCompile: ~command /Users/binayakghosh/projects/nightwatch/lib/api/assertions/textContains.js:98:26
+      1  100.0%          LazyCompile: ~schedule /Users/binayakghosh/projects/nightwatch/lib/api/_loaders/assertion-scheduler.js:82:11
+      1  100.0%            LazyCompile: ~start /Users/binayakghosh/projects/nightwatch/lib/api/_loaders/assertion-scheduler.js:75:8
+      1    3.6%      LazyCompile: ~parseRange /Users/binayakghosh/projects/nightwatch/node_modules/semver/classes/range.js:79:14
+      1  100.0%        LazyCompile: ~<anonymous> /Users/binayakghosh/projects/nightwatch/node_modules/semver/classes/range.js:34:12
+      1  100.0%          T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1  100.0%            LazyCompile: ~Range /Users/binayakghosh/projects/nightwatch/node_modules/semver/classes/range.js:3:15
+      1    3.6%      LazyCompile: ~isIPv6 node:internal/net:35:16
+      1  100.0%        LazyCompile: ~isIP node:internal/net:39:14
+      1  100.0%          LazyCompile: ~lookupAndConnect node:net:995:26
+      1  100.0%            LazyCompile: ~Socket.connect node:net:937:36
+      1    3.6%      LazyCompile: ~getErrorContent /Users/binayakghosh/projects/nightwatch/lib/utils/logger/index.js:324:18
+      1  100.0%        LazyCompile: ~error /Users/binayakghosh/projects/nightwatch/lib/utils/logger/index.js:193:8
+      1  100.0%          LazyCompile: ~elementLocateError /Users/binayakghosh/projects/nightwatch/lib/api/element-commands/isPresent.js:45:21
+      1  100.0%            LazyCompile: ~errorHandler /Users/binayakghosh/projects/nightwatch/lib/api/element-commands/_baseElementCommand.js:79:23
+      1    3.6%      LazyCompile: ~createGlobalReport /Users/binayakghosh/projects/nightwatch/lib/reporter/results.js:510:28
+      1  100.0%        LazyCompile: ~create /Users/binayakghosh/projects/nightwatch/lib/reporter/global-reporter.js:90:9
+      1  100.0%          LazyCompile: ~printGlobalResults /Users/binayakghosh/projects/nightwatch/lib/runner/test-runners/default.js:115:21
+      1  100.0%            LazyCompile: ~reportResults /Users/binayakghosh/projects/nightwatch/lib/runner/test-runners/default.js:141:22
+      1    3.6%      LazyCompile: ~<anonymous> /Users/binayakghosh/projects/nightwatch/node_modules/webidl-conversions/lib/index.js:390:11
+      1  100.0%        T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1  100.0%          Function: ~<anonymous> /Users/binayakghosh/projects/nightwatch/node_modules/webidl-conversions/lib/index.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1051:37
+      1    3.6%      LazyCompile: ~<anonymous> /Users/binayakghosh/projects/nightwatch/node_modules/@nightwatch/chai/lib/chai/utils/addChainableMethod.js:28:70
+      1  100.0%        T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1  100.0%          Function: ~<anonymous> /Users/binayakghosh/projects/nightwatch/node_modules/@nightwatch/chai/lib/chai/utils/addChainableMethod.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1051:37
+      1    3.6%      LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%        Function: ^Module.require node:internal/modules/cjs/loader:991:36
+      1  100.0%          Function: ^require node:internal/modules/cjs/helpers:101:31
+      1  100.0%            Function: ~<anonymous> /Users/binayakghosh/projects/nightwatch/node_modules/jsdom/lib/jsdom/living/generated/MutationObserver.js:1:1
+      1    3.6%      Function: ^reduceToSingleString node:internal/util/inspect:1900:30
+      1  100.0%        LazyCompile: ~formatRaw node:internal/util/inspect:818:19
+      1  100.0%          Function: ^formatValue node:internal/util/inspect:743:21
+      1  100.0%            Function: ^formatProperty node:internal/util/inspect:1808:24
+      1    3.6%      Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+      1    3.6%      Function: ^process /Users/binayakghosh/projects/nightwatch/node_modules/ansi-to-html/lib/ansi_to_html.js:501:19
+      1  100.0%        Function: ^tokenize /Users/binayakghosh/projects/nightwatch/node_modules/ansi-to-html/lib/ansi_to_html.js:374:18
+      1  100.0%          Function: ^toHtml /Users/binayakghosh/projects/nightwatch/node_modules/ansi-to-html/lib/ansi_to_html.js:591:27
+      1  100.0%            Function: ^<anonymous> /Users/binayakghosh/projects/nightwatch/lib/reporter/global-reporter.js:67:47
+      1    3.6%      Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+      1  100.0%        Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%          Function: ^Module.require node:internal/modules/cjs/loader:991:36
+      1  100.0%            Function: ^require node:internal/modules/cjs/helpers:101:31
+      1    3.6%      Function: ^getInverseReplacer /Users/binayakghosh/projects/nightwatch/node_modules/entities/lib/encode.js:48:28
+      1  100.0%        Function: ~<anonymous> /Users/binayakghosh/projects/nightwatch/node_modules/entities/lib/encode.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1051:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1106:37
+      1    3.6%      Function: ^convertKeys /Users/binayakghosh/projects/nightwatch/node_modules/selenium-webdriver/lib/webdriver.js:172:27
+      1  100.0%        Function: ^toWireValue /Users/binayakghosh/projects/nightwatch/node_modules/selenium-webdriver/lib/webdriver.js:142:27
+      1  100.0%          T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1    3.6%      Function: ^compileFunction node:vm:308:25
+      1  100.0%        Function: ^wrapSafe node:internal/modules/cjs/loader:1011:18
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1051:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1106:37
+      1    3.6%      Function: ^_addHeaderLine node:_http_incoming:340:24
+      1  100.0%        Function: ^get node:_http_incoming:108:16
+      1  100.0%          T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1  100.0%            Function: ^<anonymous> /Users/binayakghosh/projects/nightwatch/lib/transport/selenium-webdriver/httpclient.js:59:33
+      1    3.6%      Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%        Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:991:36
+      1    3.6%      Function: ^<anonymous> /Users/binayakghosh/projects/nightwatch/node_modules/psl/index.js:14:61
+      1  100.0%        T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1  100.0%          Function: ~<anonymous> /Users/binayakghosh/projects/nightwatch/node_modules/psl/index.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1051:37
+     18    5.8%    LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     18  100.0%      LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      4   22.2%        Function: ~<anonymous> node:internal/webstreams/adapters:1:1
+      4  100.0%          LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      4  100.0%            LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      2   11.1%        LazyCompile: ~initializeCJSLoader node:internal/bootstrap/pre_execution:412:29
+      2  100.0%          LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:22:36
+      2  100.0%            Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      2   11.1%        Function: ~<anonymous> node:internal/webstreams/readablestream:1:1
+      2  100.0%          LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2  100.0%            LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      2   11.1%        Function: ~<anonymous> node:internal/process/esm_loader:1:1
+      2  100.0%          LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2  100.0%            LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      2   11.1%        Function: ~<anonymous> node:internal/fs/promises:1:1
+      2  100.0%          LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2  100.0%            LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    5.6%        Function: ~<anonymous> node:internal/source_map/source_map_cache:1:1
+      1  100.0%          LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    5.6%        Function: ~<anonymous> node:internal/modules/esm/resolve:1:1
+      1  100.0%          LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    5.6%        Function: ~<anonymous> node:internal/modules/esm/module_map:1:1
+      1  100.0%          LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    5.6%        Function: ~<anonymous> node:internal/modules/esm/loader:1:1
+      1  100.0%          LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    5.6%        Function: ~<anonymous> node:internal/modules/esm/get_source:1:1
+      1  100.0%          LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    5.6%        Function: ~<anonymous> node:internal/main/run_main_module:1:1
+     13    4.2%    Function: ^stat node:internal/modules/cjs/loader:151:14
+      8   61.5%      Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      8  100.0%        Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      7   87.5%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      7  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:991:36
+      1   12.5%          LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:991:36
+      5   38.5%      Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      4   80.0%        Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      4  100.0%          Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      3   75.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1   25.0%            LazyCompile: ~Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1   20.0%        LazyCompile: ~tryPackage node:internal/modules/cjs/loader:338:20
+      1  100.0%          Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+     11    3.5%    Function: ^openSync node:fs:576:18
+      9   81.8%      Function: ^readFileSync node:fs:450:22
+      9  100.0%        Function: ^Module._extensions..js node:internal/modules/cjs/loader:1106:37
+      7   77.8%          Function: ^Module.load node:internal/modules/cjs/loader:963:33
+      7  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      2   22.2%          LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      2  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:991:36
+      2   18.2%      Function: ^writeFileSync node:fs:2144:23
+      2  100.0%        Function: ^appendFileSync node:fs:2207:24
+      2  100.0%          Function: ^__writeLog /Users/binayakghosh/projects/nightwatch/bin/nightwatch:12:20
+      1   50.0%            LazyCompile: ~testCaseFinished /Users/binayakghosh/projects/nightwatch/lib/testsuite/index.js:832:19
+      1   50.0%            LazyCompile: ~createReporter /Users/binayakghosh/projects/nightwatch/lib/testsuite/index.js:198:17
+      6    1.9%    LazyCompile: ~internalConnect node:net:875:25
+      6  100.0%      Function: ^defaultTriggerAsyncIdScope node:internal/async_hooks:456:36
+      6  100.0%        LazyCompile: ~emitLookup node:net:1052:46
+      6  100.0%          LazyCompile: ~onlookup node:dns:70:18
+      6    1.9%    Function: ^readSync node:fs:684:18
+      6  100.0%      Function: ^tryReadSync node:fs:429:21
+      6  100.0%        Function: ^readFileSync node:fs:450:22
+      6  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1106:37
+      6  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:963:33
+      4    1.3%    Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      2   50.0%      Function: ^resolveExports node:internal/modules/cjs/loader:472:24
+      2  100.0%        Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      2  100.0%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      2  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1   25.0%      LazyCompile: *Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%        Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%            LazyCompile: *Module.require node:internal/modules/cjs/loader:991:36
+      1   25.0%      Function: ^tryPackage node:internal/modules/cjs/loader:338:20
+      1  100.0%        Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      4    1.3%    Function: ^read node:internal/modules/package_json_reader:16:14
+      4  100.0%      Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      2   50.0%        Function: ^resolveExports node:internal/modules/cjs/loader:472:24
+      2  100.0%          Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      2  100.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1   25.0%        LazyCompile: ~tryPackage node:internal/modules/cjs/loader:338:20
+      1  100.0%          Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1   25.0%        LazyCompile: *Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1  100.0%            LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+
+    141   15.0%  T _posix_spawn_file_actions_adddup2
+
+     33    3.5%  T _semaphore_destroy
+      2    6.1%    LazyCompile: ~createSession /Users/binayakghosh/projects/nightwatch/lib/transport/selenium-webdriver/index.js:271:22
+      2  100.0%      T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      2  100.0%        T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      2  100.0%          Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+      2    6.1%    LazyCompile: ~Readable.setEncoding node:internal/streams/readable:345:42
+      2  100.0%      LazyCompile: ~HttpResponse /Users/binayakghosh/projects/nightwatch/lib/http/response.js:13:14
+      2  100.0%        LazyCompile: ~<anonymous> /Users/binayakghosh/projects/nightwatch/lib/http/request.js:187:73
+      2  100.0%          LazyCompile: ~onceWrapper node:events:634:21
+      2  100.0%            Function: ^emit node:events:470:44
+      1    3.0%    T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1  100.0%      LazyCompile: ~write /Users/binayakghosh/projects/nightwatch/lib/reporter/base-reporter.js:85:8
+      1  100.0%        LazyCompile: ~write /Users/binayakghosh/projects/nightwatch/lib/reporter/reporters/json.js:46:10
+      1  100.0%          LazyCompile: ~writeReport /Users/binayakghosh/projects/nightwatch/lib/reporter/global-reporter.js:233:20
+      1  100.0%            LazyCompile: ~<anonymous> /Users/binayakghosh/projects/nightwatch/lib/reporter/global-reporter.js:223:23
+      1    3.0%    LazyCompile: ~writeReport /Users/binayakghosh/projects/nightwatch/lib/reporter/reporters/html.js:224:20
+      1  100.0%      LazyCompile: ~write /Users/binayakghosh/projects/nightwatch/lib/reporter/reporters/html.js:248:10
+      1  100.0%        LazyCompile: ~<anonymous> /Users/binayakghosh/projects/nightwatch/lib/reporter/global-reporter.js:249:26
+      1  100.0%          T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1  100.0%            LazyCompile: ~writeReport /Users/binayakghosh/projects/nightwatch/lib/reporter/global-reporter.js:233:20
+      1    3.0%    LazyCompile: ~traverse /Users/binayakghosh/projects/nightwatch/lib/core/asynctree.js:43:17
+      1  100.0%      LazyCompile: ~walkUp /Users/binayakghosh/projects/nightwatch/lib/core/asynctree.js:64:15
+      1  100.0%        LazyCompile: ~traverse /Users/binayakghosh/projects/nightwatch/lib/core/asynctree.js:43:17
+      1  100.0%          LazyCompile: ~runChildNode /Users/binayakghosh/projects/nightwatch/lib/core/asynctree.js:111:21
+      1  100.0%            T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1    3.0%    LazyCompile: ~stylizeWithColor node:internal/util/inspect:538:26
+      1  100.0%      LazyCompile: ~<anonymous> node:internal/util/inspect:1532:14
+      1  100.0%        T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1  100.0%          LazyCompile: ~formatPrimitive node:internal/util/inspect:1517:25
+      1  100.0%            LazyCompile: ~formatValue node:internal/util/inspect:743:21
+      1    3.0%    LazyCompile: ~slice node:buffer:1115:40
+      1  100.0%      LazyCompile: ~parserOnBody node:_http_common:131:22
+      1  100.0%        T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1  100.0%          LazyCompile: ~socketOnData node:_http_client:475:22
+      1  100.0%            Function: ^emit node:events:470:44
+      1    3.0%    LazyCompile: ~setOptions /Users/binayakghosh/projects/nightwatch/lib/utils/logger/index.js:214:13
+      1  100.0%      LazyCompile: ~setLoggingOptions /Users/binayakghosh/projects/nightwatch/lib/runner/cli/cli.js:188:20
+      1  100.0%        LazyCompile: ~initTestSettings /Users/binayakghosh/projects/nightwatch/lib/runner/cli/cli.js:104:19
+      1  100.0%          LazyCompile: ~parseTestSettings /Users/binayakghosh/projects/nightwatch/lib/runner/cli/cli.js:338:20
+      1  100.0%            LazyCompile: ~commonSetup /Users/binayakghosh/projects/nightwatch/lib/runner/cli/cli.js:221:14
+      1    3.0%    LazyCompile: ~realpathSync node:fs:2410:22
+      1  100.0%      LazyCompile: ~toRealPath node:internal/modules/cjs/loader:393:20
+      1  100.0%        LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%          LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      1  100.0%            LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:70:31
+      1    3.0%    LazyCompile: ~pollCondition /Users/binayakghosh/projects/nightwatch/node_modules/selenium-webdriver/lib/webdriver.js:898:29
+      1  100.0%      LazyCompile: ~<anonymous> /Users/binayakghosh/projects/nightwatch/node_modules/selenium-webdriver/lib/webdriver.js:896:30
+      1  100.0%        T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1  100.0%          LazyCompile: ~wait /Users/binayakghosh/projects/nightwatch/node_modules/selenium-webdriver/lib/webdriver.js:817:7
+      1  100.0%            LazyCompile: ~sendElementsAction /Users/binayakghosh/projects/nightwatch/lib/element/locator.js:235:27
+      1    3.0%    LazyCompile: ~parseResponseData /Users/binayakghosh/projects/nightwatch/lib/http/response.js:77:20
+      1  100.0%      LazyCompile: ~<anonymous> /Users/binayakghosh/projects/nightwatch/lib/http/response.js:29:24
+      1  100.0%        Function: ^emit node:events:470:44
+      1  100.0%          LazyCompile: ~emit node:domain:464:44
+      1  100.0%            LazyCompile: ~endReadableNT node:internal/streams/readable:1336:23
+      1    3.0%    LazyCompile: ~onStreamRead node:internal/stream_base_commons:167:22
+      1    3.0%    LazyCompile: ~onFinish node:_http_outgoing:828:18
+      1  100.0%      Function: ^callback node:internal/streams/writable:551:44
+      1  100.0%        Function: ^afterWrite node:internal/streams/writable:488:20
+      1  100.0%          LazyCompile: ~onwrite node:internal/streams/writable:426:17
+      1  100.0%            Function: ^afterWriteDispatched node:internal/stream_base_commons:155:30
+      1    3.0%    LazyCompile: ~initialize /Users/binayakghosh/projects/nightwatch/lib/api/assertions/_assertionInstance.js:48:13
+      1  100.0%      LazyCompile: ~module.exports.create /Users/binayakghosh/projects/nightwatch/lib/api/assertions/_assertionInstance.js:227:33
+      1  100.0%        LazyCompile: ~<anonymous> /Users/binayakghosh/projects/nightwatch/lib/api/_loaders/assertion.js:131:17
+      1  100.0%          T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1  100.0%            Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+      1    3.0%    LazyCompile: ~getDriver /Users/binayakghosh/projects/nightwatch/lib/transport/selenium-webdriver/index.js:221:18
+      1  100.0%      T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1  100.0%        T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1  100.0%          Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+      1    3.0%    LazyCompile: ~findElements /Users/binayakghosh/projects/nightwatch/node_modules/selenium-webdriver/lib/webdriver.js:1049:21
+      1  100.0%      T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1  100.0%        T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1  100.0%          Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+      1    3.0%    LazyCompile: ~exported /Users/binayakghosh/projects/nightwatch/lib/transport/selenium-webdriver/session.js:22:17
+      1  100.0%      T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1  100.0%        T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1  100.0%          Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+      1    3.0%    LazyCompile: ~emit node:domain:464:44
+      1  100.0%      LazyCompile: ~endReadableNT node:internal/streams/readable:1336:23
+      1  100.0%        Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+      1    3.0%    LazyCompile: ~createSocket node:_http_agent:313:53
+      1  100.0%      LazyCompile: ~addRequest node:_http_agent:242:49
+      1  100.0%        LazyCompile: ~ClientRequest node:_http_client:106:23
+      1  100.0%          Function: ^request node:http:95:17
+      1  100.0%            LazyCompile: ~createHttpRequest /Users/binayakghosh/projects/nightwatch/lib/http/request.js:185:20
+      1    3.0%    LazyCompile: ~baseKeysIn /Users/binayakghosh/projects/nightwatch/node_modules/lodash.defaultsdeep/index.js:890:20
+      1  100.0%      LazyCompile: ~keysIn /Users/binayakghosh/projects/nightwatch/node_modules/lodash.defaultsdeep/index.js:1924:16
+      1  100.0%        Function: ^<anonymous> /Users/binayakghosh/projects/nightwatch/node_modules/lodash.defaultsdeep/index.js:1185:18
+      1  100.0%          LazyCompile: ~baseMerge /Users/binayakghosh/projects/nightwatch/node_modules/lodash.defaultsdeep/index.js:916:19
+      1  100.0%            LazyCompile: ~<anonymous> /Users/binayakghosh/projects/nightwatch/node_modules/lodash.defaultsdeep/index.js:1959:40
+      1    3.0%    LazyCompile: ~arrayClone node:events:877:20
+      1  100.0%      Function: ^emit node:events:470:44
+      1  100.0%        Function: ^emit node:domain:464:44
+      1  100.0%          Function: ^<anonymous> node:net:685:24
+      1    3.0%    LazyCompile: ~afterWriteDispatched node:internal/stream_base_commons:155:30
+      1  100.0%      LazyCompile: ~writeGeneric node:internal/stream_base_commons:147:22
+      1  100.0%        LazyCompile: ~Socket._writeGeneric node:net:769:42
+      1  100.0%          LazyCompile: ~Socket._write node:net:806:35
+      1  100.0%            LazyCompile: ~writeOrBuffer node:internal/streams/writable:366:23
+      1    3.0%    LazyCompile: ~<anonymous> /Users/binayakghosh/projects/nightwatch/node_modules/selenium-webdriver/lib/webdriver.js:192:40
+      1  100.0%      LazyCompile: ~forEachKey /Users/binayakghosh/projects/nightwatch/node_modules/selenium-webdriver/lib/webdriver.js:180:28
+      1  100.0%        LazyCompile: ~convertKeys /Users/binayakghosh/projects/nightwatch/node_modules/selenium-webdriver/lib/webdriver.js:172:27
+      1  100.0%          LazyCompile: ~toWireValue /Users/binayakghosh/projects/nightwatch/node_modules/selenium-webdriver/lib/webdriver.js:142:27
+      1  100.0%            T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1    3.0%    LazyCompile: ~<anonymous> /Users/binayakghosh/projects/nightwatch/lib/http/request.js:187:73
+      1  100.0%      LazyCompile: ~onceWrapper node:events:634:21
+      1  100.0%        Function: ^emit node:events:470:44
+      1  100.0%          LazyCompile: ~emit node:domain:464:44
+      1  100.0%            LazyCompile: ~parserOnIncomingClient node:_http_client:553:32
+      1    3.0%    Function: ~<anonymous> node:domain:1:1
+      1  100.0%      Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%        Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1  100.0%          Function: ~<anonymous> node:repl:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    3.0%    Function: ^onceWrapper node:events:634:21
+      1  100.0%      Function: ^emit node:events:470:44
+      1  100.0%        LazyCompile: ~emit node:domain:464:44
+      1  100.0%          LazyCompile: ~<anonymous> /Users/binayakghosh/projects/nightwatch/lib/http/request.js:167:32
+      1  100.0%            Function: ^emit node:events:470:44
+      1    3.0%    Function: ^emit node:events:470:44
+      1  100.0%      LazyCompile: ~emit node:domain:464:44
+      1  100.0%        LazyCompile: ~<anonymous> /Users/binayakghosh/projects/nightwatch/lib/http/response.js:29:24
+      1  100.0%          Function: ^emit node:events:470:44
+      1  100.0%            LazyCompile: ~emit node:domain:464:44
+
+     20    2.1%  /usr/lib/system/libsystem_c.dylib
+      2   10.0%    T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1   50.0%      LazyCompile: ~proxyEvents /Users/binayakghosh/projects/nightwatch/lib/http/request.js:165:14
+      1  100.0%        LazyCompile: ~<anonymous> /Users/binayakghosh/projects/nightwatch/lib/http/request.js:187:73
+      1  100.0%          LazyCompile: ~onceWrapper node:events:634:21
+      1  100.0%            Function: ^emit node:events:470:44
+      1   50.0%      LazyCompile: ~<anonymous> /Users/binayakghosh/projects/nightwatch/node_modules/minimatch/minimatch.js:196:26
+      1  100.0%        T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1  100.0%          LazyCompile: ~make /Users/binayakghosh/projects/nightwatch/node_modules/minimatch/minimatch.js:160:15
+      1  100.0%            LazyCompile: ~Minimatch /Users/binayakghosh/projects/nightwatch/node_modules/minimatch/minimatch.js:128:20
+      2   10.0%    LazyCompile: ~toRealPath node:internal/modules/cjs/loader:393:20
+      2  100.0%      LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      2  100.0%        LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      2  100.0%          LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:70:31
+      2  100.0%            Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      2   10.0%    Function: ~<anonymous> node:internal/fs/promises:1:1
+      2  100.0%      LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2  100.0%        LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      2  100.0%          Function: ~<anonymous> node:internal/modules/esm/get_source:1:1
+      2  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    5.0%    LazyCompile: ~tokenize /Users/binayakghosh/projects/nightwatch/node_modules/ansi-to-html/lib/ansi_to_html.js:374:18
+      1  100.0%      LazyCompile: ~toHtml /Users/binayakghosh/projects/nightwatch/node_modules/ansi-to-html/lib/ansi_to_html.js:591:27
+      1  100.0%        LazyCompile: ~<anonymous> /Users/binayakghosh/projects/nightwatch/lib/reporter/global-reporter.js:67:47
+      1  100.0%          T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1  100.0%            LazyCompile: ~addTestSuiteResults /Users/binayakghosh/projects/nightwatch/lib/reporter/global-reporter.js:64:22
+      1    5.0%    LazyCompile: ~stripBOM node:internal/modules/cjs/helpers:135:18
+      1  100.0%      LazyCompile: ~Module._extensions..json node:internal/modules/cjs/loader:1154:39
+      1  100.0%        Function: ^Module.load node:internal/modules/cjs/loader:963:33
+      1  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:991:36
+      1    5.0%    LazyCompile: ~setTimeout node:_http_client:848:57
+      1  100.0%      LazyCompile: ~send /Users/binayakghosh/projects/nightwatch/lib/http/request.js:332:7
+      1  100.0%        LazyCompile: ~<anonymous> /Users/binayakghosh/projects/nightwatch/lib/transport/selenium-webdriver/httpclient.js:58:26
+      1  100.0%          T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1  100.0%            LazyCompile: ~send /Users/binayakghosh/projects/nightwatch/lib/transport/selenium-webdriver/httpclient.js:41:9
+      1    5.0%    LazyCompile: ~parserOnHeadersComplete node:_http_common:77:33
+      1  100.0%      T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1  100.0%        LazyCompile: ~socketOnData node:_http_client:475:22
+      1  100.0%          LazyCompile: ~emit node:events:470:44
+      1  100.0%            LazyCompile: ~emit node:domain:464:44
+      1    5.0%    LazyCompile: ~maybeReadMore_ node:internal/streams/readable:632:24
+      1  100.0%      Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+      1    5.0%    LazyCompile: ~logTimestamp /Users/binayakghosh/projects/nightwatch/lib/utils/logger/index.js:62:22
+      1  100.0%      LazyCompile: ~logMessage /Users/binayakghosh/projects/nightwatch/lib/utils/logger/index.js:70:20
+      1  100.0%        LazyCompile: ~logError /Users/binayakghosh/projects/nightwatch/lib/utils/logger/index.js:157:18
+      1  100.0%          LazyCompile: ~error /Users/binayakghosh/projects/nightwatch/lib/utils/logger/index.js:193:8
+      1  100.0%            LazyCompile: ~elementLocateError /Users/binayakghosh/projects/nightwatch/lib/api/element-commands/isPresent.js:45:21
+      1    5.0%    LazyCompile: ~isElementDisplayed /Users/binayakghosh/projects/nightwatch/lib/transport/selenium-webdriver/method-mappings.js:534:33
+      1  100.0%      LazyCompile: ~<anonymous> /Users/binayakghosh/projects/nightwatch/lib/transport/selenium-webdriver/actions.js:41:12
+      1  100.0%        LazyCompile: ~executeProtocolAction /Users/binayakghosh/projects/nightwatch/lib/transport/selenium-webdriver/index.js:370:24
+      1  100.0%          LazyCompile: ~executeProtocolAction /Users/binayakghosh/projects/nightwatch/lib/element/command.js:225:24
+      1  100.0%            LazyCompile: ~protocolAction /Users/binayakghosh/projects/nightwatch/lib/api/element-commands/_waitForDisplayed.js:4:17
+      1    5.0%    LazyCompile: ~initSocketHandle node:net:254:26
+      1  100.0%      LazyCompile: ~Socket.connect node:net:937:36
+      1  100.0%        LazyCompile: ~connect node:net:193:17
+      1  100.0%          LazyCompile: ~createSocket node:_http_agent:313:53
+      1  100.0%            LazyCompile: ~addRequest node:_http_agent:242:49
+      1    5.0%    LazyCompile: ~formatValue node:internal/util/inspect:743:21
+      1  100.0%      LazyCompile: ~inspect node:internal/util/inspect:290:17
+      1  100.0%        LazyCompile: ~inspectObject /Users/binayakghosh/projects/nightwatch/lib/utils/logger/index.js:47:23
+      1  100.0%          LazyCompile: ~logRequest /Users/binayakghosh/projects/nightwatch/lib/utils/logger/index.js:145:20
+      1  100.0%            LazyCompile: ~request /Users/binayakghosh/projects/nightwatch/lib/utils/logger/index.js:198:10
+      1    5.0%    LazyCompile: ~compile /Users/binayakghosh/projects/nightwatch/node_modules/ejs/lib/ejs.js:571:21
+      1  100.0%      LazyCompile: ~compile /Users/binayakghosh/projects/nightwatch/node_modules/ejs/lib/ejs.js:381:35
+      1  100.0%        LazyCompile: ~handleCache /Users/binayakghosh/projects/nightwatch/node_modules/ejs/lib/ejs.js:210:21
+      1  100.0%          LazyCompile: ~exports.render /Users/binayakghosh/projects/nightwatch/node_modules/ejs/lib/ejs.js:415:27
+      1  100.0%            LazyCompile: ~writeReport /Users/binayakghosh/projects/nightwatch/lib/reporter/reporters/junit.js:45:14
+      1    5.0%    LazyCompile: ~ElementCommand /Users/binayakghosh/projects/nightwatch/lib/element/command.js:123:14
+      1  100.0%      LazyCompile: ~BaseElementCommand /Users/binayakghosh/projects/nightwatch/lib/api/element-commands/_baseElementCommand.js:6:1
+      1  100.0%        LazyCompile: ~isPresent /Users/binayakghosh/projects/nightwatch/lib/api/element-commands/isPresent.js:44:1
+      1  100.0%          LazyCompile: ~createInstance /Users/binayakghosh/projects/nightwatch/lib/api/_loaders/element-command.js:5:24
+      1  100.0%            LazyCompile: ~commandFn /Users/binayakghosh/projects/nightwatch/lib/api/_loaders/element-command.js:13:42
+      1    5.0%    LazyCompile: ~<anonymous> node:net:1051:61
+      1  100.0%      Function: ^defaultTriggerAsyncIdScope node:internal/async_hooks:456:36
+      1  100.0%        LazyCompile: ~lookupAndConnect node:net:995:26
+      1  100.0%          LazyCompile: ~Socket.connect node:net:937:36
+      1  100.0%            LazyCompile: ~connect node:net:193:17
+      1    5.0%    Function: ~<anonymous> node:repl:1:1
+      1  100.0%      Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%        Function: ^compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      1  100.0%          Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1    5.0%    Function: ~<anonymous> /Users/binayakghosh/projects/nightwatch/node_modules/glob/glob.js:1:1
+      1  100.0%      Function: ^Module._compile node:internal/modules/cjs/loader:1051:37
+      1  100.0%        Function: ^Module._extensions..js node:internal/modules/cjs/loader:1106:37
+      1  100.0%          Function: ^Module.load node:internal/modules/cjs/loader:963:33
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+
+     15    1.6%  /usr/lib/system/libsystem_kernel.dylib
+      2   13.3%    LazyCompile: *testClockAccuracy /Users/binayakghosh/projects/nightwatch/node_modules/w3c-hr-time/lib/clock-is-accurate.js:7:27
+      2  100.0%      Function: ~<anonymous> /Users/binayakghosh/projects/nightwatch/node_modules/w3c-hr-time/lib/clock-is-accurate.js:1:1
+      2  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1051:37
+      2  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1106:37
+      2  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:963:33
+      1    6.7%    LazyCompile: ~toRealPath node:internal/modules/cjs/loader:393:20
+      1  100.0%      LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%        LazyCompile: ~resolveMainPath node:internal/modules/run_main:15:25
+      1  100.0%          LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:70:31
+      1  100.0%            Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    6.7%    LazyCompile: ~resolvePackageTarget node:internal/modules/esm/resolve:530:30
+      1  100.0%      LazyCompile: ~resolvePackageTarget node:internal/modules/esm/resolve:530:30
+      1  100.0%        LazyCompile: ~packageExportsResolve node:internal/modules/esm/resolve:633:31
+      1  100.0%          Function: ^resolveExports node:internal/modules/cjs/loader:472:24
+      1  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1    6.7%    LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:22:36
+      1  100.0%      Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    6.7%    LazyCompile: ~exports.convert /Users/binayakghosh/projects/nightwatch/node_modules/jsdom/lib/jsdom/living/generated/CompositionEventInit.js:24:19
+      1  100.0%      Function: ~<anonymous> /Users/binayakghosh/projects/nightwatch/node_modules/jsdom/lib/jsdom/living/events/CompositionEvent-impl.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1051:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1106:37
+      1  100.0%            LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      1    6.7%    LazyCompile: ~createSession /Users/binayakghosh/projects/nightwatch/lib/transport/selenium-webdriver/index.js:271:22
+      1  100.0%      LazyCompile: ~createSession /Users/binayakghosh/projects/nightwatch/lib/core/client.js:682:16
+      1  100.0%        LazyCompile: ~createSession /Users/binayakghosh/projects/nightwatch/lib/testsuite/index.js:475:16
+      1  100.0%          LazyCompile: ~startTestSuite /Users/binayakghosh/projects/nightwatch/lib/testsuite/index.js:498:23
+      1  100.0%            LazyCompile: ~runTestSuite /Users/binayakghosh/projects/nightwatch/lib/testsuite/index.js:535:15
+      1    6.7%    LazyCompile: ~connect node:net:193:17
+      1  100.0%      LazyCompile: ~createSocket node:_http_agent:313:53
+      1  100.0%        LazyCompile: ~addRequest node:_http_agent:242:49
+      1  100.0%          LazyCompile: ~ClientRequest node:_http_client:106:23
+      1  100.0%            LazyCompile: ~request node:http:95:17
+      1    6.7%    LazyCompile: ~ansiMess /Users/binayakghosh/projects/nightwatch/node_modules/ansi-to-html/lib/ansi_to_html.js:402:20
+      1  100.0%      T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1  100.0%        T node::fs::FSReqAfterScope::FSReqAfterScope(node::fs::FSReqBase*, uv_fs_s*)
+      1  100.0%          Function: ^process /Users/binayakghosh/projects/nightwatch/node_modules/ansi-to-html/lib/ansi_to_html.js:501:19
+      1  100.0%            Function: ^tokenize /Users/binayakghosh/projects/nightwatch/node_modules/ansi-to-html/lib/ansi_to_html.js:374:18
+      1    6.7%    LazyCompile: ~Duplex node:internal/streams/duplex:52:16
+      1  100.0%      LazyCompile: ~Socket node:net:283:16
+      1  100.0%        LazyCompile: ~WriteStream node:tty:84:21
+      1  100.0%          LazyCompile: ~createWritableStdioStream node:internal/bootstrap/switches/is_main_thread:41:35
+      1  100.0%            LazyCompile: ~getStdout node:internal/bootstrap/switches/is_main_thread:125:19
+      1    6.7%    LazyCompile: *calculateClockOffset /Users/binayakghosh/projects/nightwatch/node_modules/w3c-hr-time/lib/calculate-clock-offset.js:14:30
+      1  100.0%      Function: ~<anonymous> /Users/binayakghosh/projects/nightwatch/node_modules/w3c-hr-time/lib/calculate-clock-offset.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1051:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1106:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:963:33
+      1    6.7%    Function: ~<anonymous> node:repl:1:1
+      1  100.0%      Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%        Function: ^compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      1  100.0%          Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+
+     14    1.5%  T _mach_get_times
+      4   28.6%    LazyCompile: ~Readable.setEncoding node:internal/streams/readable:345:42
+      4  100.0%      LazyCompile: ~HttpResponse /Users/binayakghosh/projects/nightwatch/lib/http/response.js:13:14
+      4  100.0%        LazyCompile: ~<anonymous> /Users/binayakghosh/projects/nightwatch/lib/http/request.js:187:73
+      4  100.0%          LazyCompile: ~onceWrapper node:events:634:21
+      4  100.0%            Function: ^emit node:events:470:44
+      3   21.4%    LazyCompile: ~onStreamRead node:internal/stream_base_commons:167:22
+      2   14.3%    LazyCompile: ~maybeReadMore_ node:internal/streams/readable:632:24
+      2  100.0%      Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+
