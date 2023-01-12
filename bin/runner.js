@@ -23,9 +23,18 @@ try {
 
         throw err;
       })
-      .then(() => runner.runTests())
+      .then(async () => {
+        __writeLog('cli_runner_run_test', 'start');
+
+        const res = await runner.runTests();
+
+        __writeLog('cli_runner_run_test', 'end');
+
+        return res;
+      })
       .then(result => {
         __writeLog('cli_invoke', 'end');
+
         return result;
       })
       .catch((err) => {
