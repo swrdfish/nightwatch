@@ -24,7 +24,7 @@ describe('sample google search', function() {
         .click('form[action^="https://consent.google.no"] button')
 
         // saving the consent form takes some time, no need to check for anything else
-        .pause(1000);
+        .pause();
     }
 
     await browser
